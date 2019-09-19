@@ -1,2 +1,2 @@
 # ClipboardPlaceholder
-Simple pulgin to add {clipboard} as a Placeholder for KeePass
+Simple pulgin to add {clipboard} as a Placeholder for KeePass AutoType feature
