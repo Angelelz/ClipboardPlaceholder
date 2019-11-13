@@ -37,8 +37,40 @@ namespace ClipboardPlaceholder
             autoTypeEventArgs.Sequence = replacer.Replace(autoTypeEventArgs.Sequence, match =>
             {
                 var clip = ClipboardUtil.GetText();
-                return clip;
+                return BracketReplace(clip);
             });
+        }
+
+        private static string BracketReplace(string str)
+        {
+            string nstr = "";
+            for(int i = 0; i < str.Length; ++i)
+            {
+                if (str[i] == '{' || str[i] == '}' || str[i] == '\u0009' || str[i] == '\u2386')
+                {
+                    switch (str[i])
+                    {
+                        case '{':
+                            nstr = nstr + "{{}";
+                            break;
+                        case '}':
+                            nstr = nstr + "{}}";
+                            break;
+                        case '\u0009':
+                            nstr = nstr + '\u0009';
+                            break;
+                        case '\u2386':
+                            nstr = nstr + '\u2386';
+                            break;
+                    }
+                }
+                else nstr = nstr + str[i];
+
+            }
+            return nstr.Replace("[", "{[}").Replace("]", "{]}")
+                       .Replace("(", "{(}").Replace(")", "{)}")
+                       .Replace("~", "{~}").Replace("^", "{^}")
+                       .Replace("%", "{%}").Replace("+", "{+}");
         }
 
     }
