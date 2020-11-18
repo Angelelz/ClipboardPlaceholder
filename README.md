@@ -1,4 +1,4 @@
-# ClipboardPlaceholder
+# ClipboardPlaceholder (Archived since Keepass added this functionality natively)
 
 [![Latest release](https://img.shields.io/github/release/Angelelz/ClipboardPlaceholder.svg?label=latest%20release)](https://github.com/Angelelz/ClipboardPlaceholder/releases/latest)
 [![GitHub issues](https://img.shields.io/github/issues/Angelelz/ClipboardPlaceholder.svg)](https://github.com/Angelelz/ClipboardPlaceholder/issues)
